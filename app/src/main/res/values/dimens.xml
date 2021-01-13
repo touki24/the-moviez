@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_size_pico">7sp</dimen>
+    <dimen name="font_size_mini">8sp</dimen>
+    <dimen name="font_size_ultra_small">9sp</dimen>
+    <dimen name="font_size_extra_small">10sp</dimen>
+
+    <dimen name="font_size_small">12sp</dimen>
+    <dimen name="font_size_medium">14sp</dimen>
+    <dimen name="font_size_large">16sp</dimen>
+
+    <dimen name="font_size_extra_large">18sp</dimen>
+    <dimen name="font_size_ultra_large">20sp</dimen>
+    <dimen name="font_size_mega_large">21sp</dimen>
+    <dimen name="font_size_giga_large">22sp</dimen>
+    <dimen name="font_size_tera_large">23sp</dimen>
+    <dimen name="font_size_peta_large">24sp</dimen>
+
+    <dimen name="tab_spacing">6dp</dimen>
+
+    <dimen name="button_size">45dp</dimen>
+    <dimen name="button_radius">30dp</dimen>
+</resources>

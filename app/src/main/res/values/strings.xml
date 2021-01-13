@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="label_dark_theme">Dark theme</string>
+    <string name="info_dark_theme"><![CDATA[Reduce glare & improve night viewing]]></string>
+    <string name="label_setting">Setting</string>
+
+    <string name="label_action">Action</string>
+    <string name="label_horror">Horror</string>
+    <string name="label_comedy">Comedy</string>
+    <string name="label_other">Other</string>
+
+    <string name="info_movie_title">%1s (%2d)</string>
+    <string name="info_rating">Rating %1$.1f</string>
+    <string name="info_genre">Genre %1s</string>
+</resources>
