@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MoviesActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityMovieBinding
-    private val viewModel: MoviesViewModel by viewModels()
+    private val moviesViewModel: MoviesViewModel by viewModels()
     private val adapter by lazy { MoviesRecyclerAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class MoviesActivity : AppCompatActivity() {
         initiateView()
         setMoviesObserver()
 
-        viewModel.getMovies()
+        moviesViewModel.getMovies()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -48,22 +48,22 @@ class MoviesActivity : AppCompatActivity() {
 
     private fun initiateView() {
         with(viewBinding) {
-            moviesProgressBar.visibility = View.VISIBLE
-            moviesRecyclerMovies.layoutManager = LinearLayoutManager(this@MoviesActivity)
-            moviesRecyclerMovies.itemAnimator = DefaultItemAnimator()
-            moviesRecyclerMovies.adapter = adapter
+            progressBarMovies.visibility = View.VISIBLE
+            recyclerMovies.layoutManager = LinearLayoutManager(this@MoviesActivity)
+            recyclerMovies.itemAnimator = DefaultItemAnimator()
+            recyclerMovies.adapter = adapter
         }
     }
 
     private fun setMoviesObserver() {
-        viewModel.getMoviesSuccess.observe(this) {
+        moviesViewModel.getMoviesSuccess.observe(this) {
             adapter.setMovies(it)
-            viewBinding.moviesProgressBar.visibility = View.GONE
+            viewBinding.progressBarMovies.visibility = View.GONE
         }
 
-        viewModel.getMoviesFailure.observe(this) {
+        moviesViewModel.getMoviesFailure.observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-            viewBinding.moviesProgressBar.visibility = View.GONE
+            viewBinding.progressBarMovies.visibility = View.GONE
         }
     }
 }
