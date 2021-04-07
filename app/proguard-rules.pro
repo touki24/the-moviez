@@ -21,4 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 -keep public class com.touki.moviez.core.features.movies.domain.*
--keep public class com.touki.moviez.core.features.settings.domain.*
+-keep public class com.touki.moviez.core.features.darktheme.domain.*

@@ -3,18 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/itemMovieContainer"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="16dp">
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/itemMovieImageCover"
+            android:id="@+id/imageCover"
             android:layout_width="95dp"
             android:layout_height="140dp"
             android:layout_gravity="center|end"
@@ -22,11 +22,24 @@
             android:src="@drawable/wonder"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textPrice"
             app:layout_constraintDimensionRatio="H,3:2"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/itemMovieTitle"
+            android:id="@+id/textPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageCover"
+            app:layout_constraintStart_toStartOf="@id/imageCover"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Rp 200.000" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
@@ -36,31 +49,51 @@
             android:textSize="@dimen/font_size_ultra_large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/itemMovieImageCover"
+            app:layout_constraintStart_toEndOf="@id/imageCover"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Wonder Woman (2020)" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/itemMovieRating"
-            android:layout_width="0dp"
+            android:id="@+id/textLabelRating"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="20dp"
             android:textSize="@dimen/font_size_large"
-            app:layout_constraintStart_toStartOf="@id/itemMovieTitle"
-            app:layout_constraintTop_toBottomOf="@id/itemMovieTitle"
-            app:layout_constraintEnd_toEndOf="@id/itemMovieTitle"
-            tools:text="Rating 8.9" />
+            app:layout_constraintStart_toStartOf="@id/textTitle"
+            app:layout_constraintTop_toBottomOf="@id/textTitle"
+            android:text="@string/label_rating" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/itemMovieGenre"
+            android:id="@+id/textRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="@dimen/font_size_large"
+            app:layout_constraintStart_toEndOf="@id/textLabelRating"
+            app:layout_constraintTop_toBottomOf="@id/textTitle"
+            app:layout_constraintEnd_toEndOf="@id/textTitle"
+            tools:text="8.9" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textLabelGenre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/font_size_large"
-            tools:text="Genre Action"
-            app:layout_constraintStart_toStartOf="@id/itemMovieTitle"
-            app:layout_constraintTop_toBottomOf="@id/itemMovieRating"
-            app:layout_constraintEnd_toEndOf="@id/itemMovieTitle" />
+            android:text="@string/label_genre"
+            app:layout_constraintStart_toStartOf="@id/textTitle"
+            app:layout_constraintTop_toBottomOf="@id/textRating" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textGenre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="@dimen/font_size_large"
+            tools:text="Action"
+            app:layout_constraintStart_toEndOf="@id/textLabelGenre"
+            app:layout_constraintTop_toBottomOf="@id/textRating"
+            app:layout_constraintEnd_toEndOf="@id/textTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

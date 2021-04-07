@@ -4,7 +4,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.touki.moviez.App
 import com.touki.moviez.R
 import com.touki.moviez.databinding.ActivitySettingsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -12,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SettingsActivity : AppCompatActivity() {
 
-    private val viewModel: SettingsViewModel by viewModels()
+    private val settingViewModel: SettingsViewModel by viewModels()
     private lateinit var viewBinding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,24 +35,24 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun initiateView() {
         with(viewBinding) {
-            settingSwitchDarkTheme.isChecked = viewModel.isDarkThemeEnabled()
+            switchDarkTheme.isChecked = settingViewModel.isDarkThemeEnabled()
         }
     }
 
     private fun setDarkThemeObserver() {
-        viewModel.darkThemeEnabledSuccess.observe(this) {
+        settingViewModel.darkThemeEnabledSuccess.observe(this) {
 
         }
 
-        viewModel.darkThemeEnabledFailure.observe(this) {
+        settingViewModel.darkThemeEnabledFailure.observe(this) {
             Toast.makeText(this@SettingsActivity, it, Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun setOnClick() {
         with(viewBinding) {
-            settingSwitchDarkTheme.setOnCheckedChangeListener { _, isChecked ->
-                viewModel.toggleDarkTheme(isChecked)
+            switchDarkTheme.setOnCheckedChangeListener { _, isChecked ->
+                settingViewModel.toggleDarkTheme(isChecked)
             }
         }
     }
