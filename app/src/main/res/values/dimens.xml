@@ -15,6 +15,7 @@
     <dimen name="font_size_giga_large">22sp</dimen>
     <dimen name="font_size_tera_large">23sp</dimen>
     <dimen name="font_size_peta_large">24sp</dimen>
+    <dimen name="font_size_ultimate_large">34sp</dimen>
 
     <dimen name="tab_spacing">6dp</dimen>
 

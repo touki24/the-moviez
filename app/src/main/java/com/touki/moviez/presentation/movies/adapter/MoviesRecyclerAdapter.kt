@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.touki.moviez.core.features.movies.domain.Movie
+import com.touki.moviez.databinding.ItemMovieBadBinding
 import com.touki.moviez.databinding.ItemMovieBinding
 
 class MoviesRecyclerAdapter: RecyclerView.Adapter<MoviesViewHolder>() {
@@ -18,6 +19,7 @@ class MoviesRecyclerAdapter: RecyclerView.Adapter<MoviesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+//        return MoviesViewHolder(ItemMovieBadBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {

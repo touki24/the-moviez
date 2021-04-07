@@ -12,4 +12,11 @@
     <string name="info_movie_title">%1s (%2d)</string>
     <string name="info_rating">Rating %1$.1f</string>
     <string name="info_genre">Genre %1s</string>
+    <string name="label_rating">Rating</string>
+    <string name="label_genre">Genre</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="label_sign_in">Sign In</string>
+    <string name="info_nata_movie_nata_salep">Nata Movie Nata Salep</string>
+    <string name="label_moviez">Moviez</string>
 </resources>

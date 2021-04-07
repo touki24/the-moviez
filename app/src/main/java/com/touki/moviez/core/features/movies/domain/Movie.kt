@@ -5,5 +5,6 @@ data class Movie(
     val year: Int,
     val cover: String,
     val rate: Float,
-    val genre: Genre
+    val genre: Genre,
+    val price: Int
 )

@@ -5,17 +5,19 @@ import coil.load
 import com.touki.moviez.R
 import com.touki.moviez.core.features.movies.domain.Genre
 import com.touki.moviez.core.features.movies.domain.Movie
+import com.touki.moviez.databinding.ItemMovieBadBinding
 import com.touki.moviez.databinding.ItemMovieBinding
-
+import com.touki.moviez.framework.common.extensions.toIdr
 class MoviesViewHolder(private val viewBinding: ItemMovieBinding): RecyclerView.ViewHolder(viewBinding.root) {
+//class MoviesViewHolder(private val viewBinding: ItemMovieBadBinding): RecyclerView.ViewHolder(viewBinding.root) {
 
     fun bind(movie: Movie) {
         with(viewBinding) {
             val context = viewBinding.root.context
 
-            itemMovieTitle.text = context.getString(R.string.info_movie_title, movie.title, movie.year)
+            textTitle.text = context.getString(R.string.info_movie_title, movie.title, movie.year)
 
-            itemMovieRating.text = context.getString(R.string.info_rating, movie.rate)
+            textRating.text = movie.rate.toString()
 
             val genre = when (movie.genre) {
                 Genre.ACTION -> context.getString(R.string.label_action)
@@ -23,9 +25,11 @@ class MoviesViewHolder(private val viewBinding: ItemMovieBinding): RecyclerView.
                 Genre.COMEDY -> context.getString(R.string.label_comedy)
             }
 
-            itemMovieGenre.text = context.getString(R.string.info_genre, genre)
+            textGenre.text = genre
 
-            itemMovieImageCover.load(movie.cover)
+            textPrice.text = movie.price.toIdr()
+
+            imageCover.load(movie.cover)
         }
     }
 }
